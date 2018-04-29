@@ -2,7 +2,7 @@ properties([pipelineTriggers([githubPush()])])
 
 node('linux') {   
 	stage('Unit Tests') {    
-		git credentialsId: 'github-credential-assignment10', url: 'https://github.com/UsmanW/java-project'
+		git credentialsId: '665-10-jenkins_v3', url: 'https://github.com/UsmanW/java-project.git'
 		sh 'ant -f test.xml -v'   
         junit 'reports/*.xml'
 	}   
